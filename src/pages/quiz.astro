@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Quiz Flashcards" active="quiz">
+
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>🃏 Quiz Flashcards</h1>
+      <p>Retournez la carte pour révéler la réponse — Code Sportif FMMAF v9.0</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="quiz-toolbar">
+      <div class="filter-row">
+        <span class="filter-label">Thème :</span>
+        <div class="filter-btns" id="filterBtns">
+          <button class="filter-btn active" data-cat="all">Tous</button>
+          <button class="filter-btn" data-cat="duree">Durée</button>
+          <button class="filter-btn" data-cat="commandements">Commandements</button>
+          <button class="filter-btn" data-cat="officiels">Officiels</button>
+          <button class="filter-btn" data-cat="jugement">Jugement</button>
+          <button class="filter-btn" data-cat="resultats">Résultats</button>
+          <button class="filter-btn" data-cat="coups">Coups interdits</button>
+          <button class="filter-btn" data-cat="poids">Catégories poids</button>
+          <button class="filter-btn" data-cat="equipements">Équipements</button>
+          <button class="filter-btn" data-cat="medical">Médical</button>
+        </div>
+      </div>
+      <div class="toolbar-actions">
+        <button class="btn-action" id="shuffleBtn">🔀 Mélanger</button>
+        <button class="btn-action" id="resetBtn">↺ Recommencer</button>
+      </div>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">Carte 1 / 40</div>
+
+    <div class="flashcard-scene" id="scene">
+      <div class="flashcard" id="card">
+        <div class="card-face card-front">
+          <div class="card-cat" id="cardCat"></div>
+          <div class="card-question" id="cardQ"></div>
+          <div class="card-hint">Cliquez pour révéler la réponse</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-cat" id="cardCatBack"></div>
+          <div class="card-answer" id="cardA"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-btn" id="prevBtn">← Précédente</button>
+      <div class="self-score">
+        <span>Je savais ?</span>
+        <button class="score-btn score-yes" id="yesBtn">✓ Oui</button>
+        <button class="score-btn score-no" id="noBtn">✗ Non</button>
+      </div>
+      <button class="nav-btn" id="nextBtn">Suivante →</button>
+    </div>
+
+    <div class="score-display" id="scoreDisplay"></div>
+
+  </div>
+</Layout>
+
+<script>
+const CARDS = [
+  // ─── DURÉE ───
+  { cat: "duree", q: "Quelle est la durée d'un combat en catégorie U14 ?", a: "1 round de 3 minutes" },
+  { cat: "duree", q: "Quelle est la durée d'un combat en catégorie U16 ?", a: "1 round de 4 minutes" },
+  { cat: "duree", q: "Quelle est la durée d'un combat en catégorie U18 ?", a: "3 rounds de 2 minutes" },
+  { cat: "duree", q: "Quelle est la durée d'un combat en catégorie U21 et 21+ ?", a: "3 rounds de 3 minutes" },
+  { cat: "duree", q: "Quelle est la durée du temps de repos entre les rounds ?", a: "1 minute entre chaque round" },
+  { cat: "duree", q: "La catégorie d'âge est définie à quelle date ?", a: "À la date de la compétition" },
+
+  // ─── COMMANDEMENTS ───
+  { cat: "commandements", q: "Que déclenche le commandement « FIGHT » ?", a: "Il déclenche le chronomètre et ordonne de combattre ou de continuer" },
+  { cat: "commandements", q: "Le commandement « STOP » arrête-t-il le chronomètre ?", a: "Non — « STOP » n'arrête PAS le chronomètre. Il ordonne seulement de cesser de combattre" },
+  { cat: "commandements", q: "Dans quels cas l'arbitre dit-il « STOP TIME » ?", a: "Coup irrégulier, perte de protection, intervention médicale — le chronomètre est arrêté" },
+  { cat: "commandements", q: "Quels sont les trois commandements principaux de l'arbitre ?", a: "« FIGHT », « STOP », « STOP TIME »" },
+
+  // ─── OFFICIELS ───
+  { cat: "officiels", q: "Quel est le premier devoir de l'arbitre ?", a: "Protéger et garantir la santé des combattant·e·s tout au long du combat" },
+  { cat: "officiels", q: "Combien de juges évaluent un combat ?", a: "3 juges" },
+  { cat: "officiels", q: "Quel officiel tient le score et compile les feuilles de notation ?", a: "Le scorekeeper" },
+  { cat: "officiels", q: "Qui peut arrêter un combat pour raisons médicales ?", a: "Le médecin de compétition (ou l'arbitre sur avis médical)" },
+  { cat: "officiels", q: "Quel est le rôle du cutman ?", a: "Soigner les coupures et contusions entre les rounds pour permettre la poursuite du combat" },
+  { cat: "officiels", q: "Quel officiel gère le temps de combat et les pauses ?", a: "Le chronométreur" },
+
+  // ─── JUGEMENT ───
+  { cat: "jugement", q: "Quel système de notation est utilisé ?", a: "Le système 10 points must : le gagnant du round reçoit 10 points, le perdant 9 ou moins" },
+  { cat: "jugement", q: "Que signifie un score 10-9 pour un round ?", a: "Un combattant a eu un net avantage sur l'autre durant le round" },
+  { cat: "jugement", q: "Que signifie un score 10-8 pour un round ?", a: "Un combattant a nettement dominé ou a mis son adversaire en danger grave" },
+  { cat: "jugement", q: "Que signifie un score 10-7 pour un round ?", a: "Domination totale — rare, réservé à une supériorité écrasante" },
+  { cat: "jugement", q: "Que signifie un score 10-10 pour un round ?", a: "Round parfaitement équilibré — les deux combattants ont eu des performances équivalentes" },
+  { cat: "jugement", q: "Que signifient les critères 3D du jugement ?", a: "Dommage (impact des coups), Domination (contrôle du combat), Dynamisme (action, prise d'initiative)" },
+
+  // ─── RÉSULTATS ───
+  { cat: "resultats", q: "Qu'est-ce qu'une décision unanime ?", a: "Les 3 juges donnent la victoire au même combattant" },
+  { cat: "resultats", q: "Qu'est-ce qu'une décision partagée ?", a: "2 juges pour un combattant, 1 juge pour l'adversaire" },
+  { cat: "resultats", q: "Qu'est-ce qu'une décision à la majorité ?", a: "2 juges pour un combattant, 1 juge en égalité (match nul)" },
+  { cat: "resultats", q: "Combien d'avertissements entraînent une disqualification ?", a: "3 avertissements" },
+  { cat: "resultats", q: "Dans quel cas un No Contest est-il déclaré ?", a: "Circonstances extérieures ou blessure non intentionnelle avant que la majorité des rounds soit disputée" },
+  { cat: "resultats", q: "Quelles sont les trois formes de soumission ?", a: "Tap (tapotement), abandon verbal, soumission technique (l'arbitre arrête le combat)" },
+  { cat: "resultats", q: "Que signifie TKO ?", a: "Technical Knock-Out — arrêt technique par l'arbitre, le médecin ou le coin du combattant" },
+
+  // ─── COUPS INTERDITS ───
+  { cat: "coups", q: "Les coups à l'arrière de la tête (rabbit punch) sont-ils autorisés ?", a: "Non — ils sont strictement interdits dans toutes les catégories" },
+  { cat: "coups", q: "Les coups de tête (headbutt) sont-ils autorisés ?", a: "Non — les coups de tête sont interdits" },
+  { cat: "coups", q: "Les coups aux parties génitales sont-ils autorisés ?", a: "Non — les coups aux zones génitales sont interdits" },
+  { cat: "coups", q: "Les coups aux reins (low blow dorsal) sont-ils autorisés ?", a: "Non — les coups au bas du dos et aux reins sont interdits" },
+  { cat: "coups", q: "Que risque un combattant qui donne un coup irrégulier intentionnel ?", a: "Un avertissement, ou une disqualification directe en cas de faute grave" },
+  { cat: "coups", q: "Les coups de coude sont-ils autorisés en catégories amateur ?", a: "Non — certaines techniques de coude sont restreintes ou interdites en amateur" },
+
+  // ─── CATÉGORIES DE POIDS ───
+  { cat: "poids", q: "Combien de catégories de poids existe-t-il pour les U14 garçons ?", a: "Plusieurs catégories allant du poids mini (≈40 kg) jusqu'au lourd, adaptées à la tranche d'âge" },
+  { cat: "poids", q: "La catégorie -66 kg en U21/21+ hommes correspond à quel nom ?", a: "Poids plume (-66 kg)" },
+  { cat: "poids", q: "La catégorie -48 kg en U21/21+ femmes correspond à quel nom ?", a: "Poids paille (-48 kg)" },
+  { cat: "poids", q: "Les catégories de poids sont-elles identiques entre les hommes et les femmes ?", a: "Non — elles diffèrent selon le sexe et la catégorie d'âge" },
+
+  // ─── ÉQUIPEMENTS ───
+  { cat: "equipements", q: "Le protège-dents est-il obligatoire ?", a: "Oui — le protège-dents est obligatoire pour tous les combattants" },
+  { cat: "equipements", q: "Les protège-tibias sont-ils obligatoires ?", a: "Oui — les protège-tibias sont obligatoires en compétition" },
+  { cat: "equipements", q: "Quel type de gants est utilisé en MMA amateur FMMAF ?", a: "Des mitaines de MMA homologuées (ouvertes aux doigts), taille adaptée à la catégorie" },
+  { cat: "equipements", q: "Une protection inguinale (coquille) est-elle obligatoire pour les hommes ?", a: "Oui — la coquille est obligatoire pour les combattants masculins" },
+
+  // ─── MÉDICAL ───
+  { cat: "medical", q: "Un certificat médical est-il requis pour participer à une compétition ?", a: "Oui — un certificat médical de non contre-indication à la pratique du MMA en compétition est obligatoire" },
+  { cat: "medical", q: "Y a-t-il une période de repos obligatoire après un KO ?", a: "Oui — une suspension médicale obligatoire est imposée après un KO, dont la durée varie selon la gravité" },
+  { cat: "medical", q: "Qui est responsable de la présence du dispositif médical lors d'une compétition ?", a: "L'organisateur de la compétition doit garantir la présence d'un médecin et du matériel de secours" },
+];
+
+const CAT_LABELS = {
+  duree: "Durée",
+  commandements: "Commandements",
+  officiels: "Officiels",
+  jugement: "Jugement",
+  resultats: "Résultats",
+  coups: "Coups interdits",
+  poids: "Catégories poids",
+  equipements: "Équipements",
+  medical: "Médical",
+};
+
+let deck = [...CARDS];
+let idx = 0;
+let scores = { yes: 0, no: 0 };
+let answered = new Set();
+let flipped = false;
+
+const card = document.getElementById('card');
+const cardQ = document.getElementById('cardQ');
+const cardA = document.getElementById('cardA');
+const cardCat = document.getElementById('cardCat');
+const cardCatBack = document.getElementById('cardCatBack');
+const progressBar = document.getElementById('progressBar');
+const progressLabel = document.getElementById('progressLabel');
+const scoreDisplay = document.getElementById('scoreDisplay');
+
+function catLabel(cat) { return CAT_LABELS[cat] || cat; }
+
+function render() {
+  const c = deck[idx];
+  cardQ.textContent = c.q;
+  cardA.textContent = c.a;
+  cardCat.textContent = catLabel(c.cat);
+  cardCatBack.textContent = catLabel(c.cat);
+  card.classList.remove('flipped');
+  flipped = false;
+
+  const pct = deck.length > 1 ? (idx / (deck.length - 1)) * 100 : 100;
+  progressBar.style.width = pct + '%';
+  progressLabel.textContent = `Carte ${idx + 1} / ${deck.length}`;
+
+  const total = scores.yes + scores.no;
+  if (total > 0) {
+    scoreDisplay.innerHTML = `<span class="sc-yes">✓ ${scores.yes} su${scores.yes > 1 ? 's' : ''}</span> &nbsp; <span class="sc-no">✗ ${scores.no} raté${scores.no > 1 ? 's' : ''}</span> &nbsp; <span class="sc-pct">${Math.round(scores.yes / total * 100)} %</span>`;
+  } else {
+    scoreDisplay.textContent = '';
+  }
+}
+
+card.addEventListener('click', () => {
+  card.classList.toggle('flipped');
+  flipped = !flipped;
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if (idx > 0) { idx--; render(); }
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (idx < deck.length - 1) { idx++; render(); }
+});
+
+document.getElementById('yesBtn').addEventListener('click', () => {
+  if (!answered.has(idx)) { scores.yes++; answered.add(idx); render(); }
+  if (idx < deck.length - 1) { idx++; render(); }
+});
+
+document.getElementById('noBtn').addEventListener('click', () => {
+  if (!answered.has(idx)) { scores.no++; answered.add(idx); render(); }
+  if (idx < deck.length - 1) { idx++; render(); }
+});
+
+document.getElementById('shuffleBtn').addEventListener('click', () => {
+  for (let i = deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  idx = 0; scores = { yes: 0, no: 0 }; answered.clear(); render();
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  idx = 0; scores = { yes: 0, no: 0 }; answered.clear(); render();
+});
+
+document.getElementById('filterBtns').addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat = btn.dataset.cat;
+  deck = cat === 'all' ? [...CARDS] : CARDS.filter(c => c.cat === cat);
+  idx = 0; scores = { yes: 0, no: 0 }; answered.clear(); render();
+});
+
+render();
+</script>
+
+<style>
+.quiz-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.25rem;
+}
+
+.filter-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 0.3rem;
+}
+
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-btn {
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--gray-light);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover { border-color: var(--blue); color: var(--blue); }
+.filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+
+.toolbar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-action {
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-action:hover { border-color: var(--blue); color: var(--blue); }
+
+.progress-bar-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.progress-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── FLASHCARD FLIP ─── */
+.flashcard-scene {
+  perspective: 1200px;
+  margin: 0 auto 1.5rem;
+  max-width: 680px;
+  height: 320px;
+}
+
+.flashcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  cursor: pointer;
+}
+
+.flashcard.flipped { transform: rotateY(180deg); }
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.card-front {
+  background: white;
+}
+
+.card-back {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.card-question {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 700;
+  color: var(--blue-dark);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.card-hint {
+  position: absolute;
+  bottom: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.card-answer {
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ─── NAV ROW ─── */
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 680px;
+  margin: 0 auto 1.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: var(--shadow);
+}
+
+.nav-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+.self-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.score-btn {
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.score-yes { border-color: var(--green); color: var(--green); background: var(--green-light); }
+.score-yes:hover { background: var(--green); color: white; }
+.score-no { border-color: var(--red); color: var(--red); background: var(--red-light); }
+.score-no:hover { background: var(--red); color: white; }
+
+.score-display {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  min-height: 1.5rem;
+}
+
+.sc-yes { color: var(--green); }
+.sc-no { color: var(--red); }
+.sc-pct { color: var(--blue); }
+
+@media (max-width: 600px) {
+  .flashcard-scene { height: 260px; }
+  .nav-row { justify-content: center; }
+  .self-score { width: 100%; justify-content: center; order: -1; }
+}
+</style>
