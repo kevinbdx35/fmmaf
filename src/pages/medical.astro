@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Dispositif Médical" active="medical">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>🏥 Dispositif Médical</h1>
+      <p>Mesures pour garantir l'intégrité des combattants — certificats, examens, repos obligatoires</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="alert alert-red" style="margin-bottom:1.5rem;">
+      <span class="alert-icon">🚨</span>
+      <div style="font-size:1rem; font-weight:600;">La manifestation ne peut se dérouler sans la présence effective et opérationnelle du médecin auprès de l'aire de combat. En cas d'absence, aucun combat ne peut avoir lieu.</div>
+    </div>
+
+    <div class="section">
+      <h2>Pré-requis Médicaux pour les Combattants</h2>
+      <p>Le médecin doit effectuer une visite médicale avant la manifestation pour contrôler d'éventuelles lésions récentes et l'aptitude à combattre. Il vérifie notamment le <strong>certificat médical obligatoire de moins d'un an</strong>.</p>
+
+      <h3>Dispositif médical selon la catégorie</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Catégorie</th><th>Documents requis</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>U14 / U16 / U18</strong></td>
+              <td>Certificat médical de moins d'1 an mentionnant : « certificat de non contre-indication à la pratique en compétition du MMA adapté pour les jeunes amateurs » + Autorisation parentale</td>
+            </tr>
+            <tr>
+              <td><strong>U21 et 21+</strong></td>
+              <td>
+                <ul style="margin:0; padding-left:1.25rem;">
+                  <li>Certificat médical de non contre-indication (moins d'1 an)</li>
+                  <li>Électrocardiogramme (ECG) de moins d'1 an</li>
+                  <li>Bilan sanguin : sérologie hépatite B, C et HIV de moins de 3 mois</li>
+                  <li>Bilan ophtalmologique avec fond d'œil de moins de 2 ans</li>
+                  <li>Si 32 ans et + au 1er septembre : ECG d'effort (tous les 5 ans)</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Contenu du certificat médical — Examen général</h3>
+      <div class="two-col">
+        <ul>
+          <li>Taille / Poids</li>
+          <li>Cardio-respiratoire (FC au repos, TA au repos et à l'effort)</li>
+          <li>Examen clinique</li>
+          <li>Neurologique</li>
+          <li>Stomatologique (denture)</li>
+          <li>ORL (acuité auditive)</li>
+        </ul>
+        <ul>
+          <li>Aires ganglionnaires abdominale et génito-urinaire</li>
+          <li>Dermatologique</li>
+          <li>Appareil locomoteur (rachis, membres supérieurs et inférieurs)</li>
+          <li>Examen ophtalmologique (U14, U16, U18)</li>
+          <li>Examen de croissance (public jeune)</li>
+        </ul>
+      </div>
+
+      <h3>Contre-indications absolues à la pratique du MMA amateur (non exhaustif)</h3>
+      <ul class="rule-list">
+        <li class="rule-item rule-item-forbidden">Comitialité (épilepsie)</li>
+        <li class="rule-item rule-item-forbidden">Antécédents neurochirurgicaux</li>
+        <li class="rule-item rule-item-forbidden">Chirurgie ophtalmologique y compris réfractive (sauf avis médical)</li>
+        <li class="rule-item rule-item-forbidden">Hépatite B/C (active ou chronique)</li>
+        <li class="rule-item rule-item-forbidden">H.I.V.</li>
+        <li class="rule-item rule-item-forbidden">Absence d'un organe pair (sauf oreille)</li>
+        <li class="rule-item rule-item-forbidden">Contre-indications ophtalmologiques : chirurgie intra-oculaire/réfractive, amblyopie &lt;3/10, myopie &gt;3,5 dioptries, cataracte, cécité</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Spécificités par Profil</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Profil</th><th>Exigence spécifique</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>32 ans et + au 1er sept.</td>
+              <td>ECG d'effort tous les 5 ans obligatoire pour l'autorisation à combattre</td>
+            </tr>
+            <tr>
+              <td>45 ans et + au 1er sept.</td>
+              <td>Continuité de pratique (au moins 1 combat officiel dans les 18 derniers mois). Différence d'âge limitée à 10 ans avec l'adversaire. Avis favorable de la commission médicale obligatoire.</td>
+            </tr>
+            <tr>
+              <td>Féminines</td>
+              <td>Attestation sur l'honneur de non-grossesse à fournir le jour de la pesée au médecin</td>
+            </tr>
+            <tr>
+              <td>Personnes en situation de handicap</td>
+              <td>Examen par la commission médicale. Certificat de non contre-indication du spécialiste de l'organe ou l'appareil concerné.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Exigences Médicales après K.O. ou TKO (Frappes à la Tête)</h2>
+      <p>Un TKO suite à des frappes à la tête est considéré comme un K.O. pour le calcul des délais.</p>
+
+      <h3>Délais de repos minimum obligatoires</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Incident</th><th>1er incident</th><th>2ème incident</th><th>3ème incident</th><th>4ème incident</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Délai entre incidents</strong></td>
+              <td>–</td>
+              <td>Entre le 29ème jour et 1 an après le 1er</td>
+              <td>Entre le 85ème jour et 1 an après le 2ème</td>
+              <td>Suspension sine die soumise à examens complémentaires</td>
+            </tr>
+            <tr>
+              <td><strong>Temps de repos minimum</strong></td>
+              <td class="td-partial">28 jours pleins d'arrêt</td>
+              <td class="td-partial">84 jours pleins d'arrêt</td>
+              <td class="td-forbidden">1 an d'arrêt (date à date)</td>
+              <td class="td-forbidden">Minimum 1 an (commission médicale)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>En cas de suspicion de commotion cérébrale</h3>
+      <ul>
+        <li>Toute suspicion doit être renseignée sur le portail « Vigi-Commotions »</li>
+        <li>Arrêt indéterminé jusqu'à l'intervention du médecin fédéral</li>
+        <li>Obligation de visite d'un spécialiste à <strong>48h</strong> qui évalue le pronostic</li>
+        <li>Reprise de l'entraînement par paliers sous contrôle du médecin du sport</li>
+        <li>Scanner cérébral (TDM) ou IRM cérébrale sans anomalie requis</li>
+        <li>Certificat de reprise établi de préférence par un <strong>neurologue</strong></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Dispositif Médical Obligatoire lors des Compétitions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Élément</th><th>Exigence</th></tr></thead>
+          <tbody>
+            <tr><td>Médecin présent</td><td>Au moins 1 médecin par aire de combat, présent pendant toute la durée</td></tr>
+            <tr><td>Équipe de secouristes</td><td>Au moins 2 secouristes en permanence à proximité des aires de combat</td></tr>
+            <tr><td>Matériel minimum</td><td>Civière/brancard, plan dur pour massage cardiaque, défibrillateur, ventilation externe, oxygène médical, immobilisation du rachis cervical, matelas à dépression</td></tr>
+            <tr><td>Local médical</td><td>Dédié pour les premiers soins, la visite avant combat et la visite après combat</td></tr>
+            <tr><td>Liaison téléphonique</td><td>Fonctionnelle au bord de l'aire de combat</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Examen Post-Combat</h2>
+      <ul>
+        <li>Immédiatement après chaque combat : examen médical obligatoire sur le lieu de compétition</li>
+        <li>Aucun·e concurrent·e ne peut refuser sous peine de suspension immédiate pour durée indéterminée</li>
+        <li>Le médecin examine en particulier le combattant ayant subi un KO (plan neurologique et ophtalmologique)</li>
+        <li>Pour les mineur·e·s : fiche coordonnées du responsable légal obligatoire avec accord à l'examen médical avant/après combat</li>
+        <li>Le médecin peut prescrire un délai de repos supérieur au délai prévu au règlement, même pour le vainqueur</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Contrôle Antidopage</h2>
+      <p>La FMMAF, sous l'égide de la FFBoxe, travaille dans le cadre de la réglementation antidopage.</p>
+      <ul>
+        <li>Contrôles antidopage possibles à tout moment de l'année (en et hors compétition)</li>
+        <li>Tout refus de prélèvement peut entraîner une procédure disciplinaire pouvant mener à une interdiction temporaire ou définitive</li>
+        <li>En cas de contrôle positif : <strong>annulation de tous les résultats</strong> à compter de la date de prélèvement + retrait de médailles, points, prix et gains</li>
+        <li>Toute victoire est requalifiée en <strong>défaite par disqualification</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</Layout>

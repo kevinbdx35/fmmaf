@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  active?: string;
+}
+const { title, description = 'Code Sportif FMMAF - MMA Jeunes et Amateurs v9.0', active = '' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navLinks = [
+  { href: `${base}/`, label: 'Accueil', key: 'index' },
+  { href: `${base}/definition`, label: 'Définition', key: 'definition' },
+  { href: `${base}/officiels`, label: 'Officiels', key: 'officiels' },
+  { href: `${base}/jugement`, label: 'Jugement', key: 'jugement' },
+  { href: `${base}/coups-interdits`, label: 'Coups interdits', key: 'coups-interdits' },
+  { href: `${base}/categories-poids`, label: 'Catégories poids', key: 'categories-poids' },
+  { href: `${base}/regles-age`, label: 'Règles par âge', key: 'regles-age' },
+  { href: `${base}/equipements`, label: 'Équipements', key: 'equipements' },
+  { href: `${base}/resultats`, label: 'Résultats', key: 'resultats' },
+  { href: `${base}/medical`, label: 'Médical', key: 'medical' },
+];
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} — FMMAF Règles MMA</title>
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href={`${base}/`} class="navbar-brand">
+        <span>FMMAF</span>
+        <span class="badge">MMA</span>
+      </a>
+      <div class="navbar-links" id="navLinks">
+        {navLinks.map(l => (
+          <a href={l.href} class={active === l.key ? 'active' : ''}>{l.label}</a>
+        ))}
+      </div>
+      <button class="navbar-toggle" id="menuBtn" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    {navLinks.map(l => (
+      <a href={l.href} class={active === l.key ? 'active' : ''}>{l.label}</a>
+    ))}
+  </div>
+
+  <slot />
+
+  <footer>
+    <p>Code Sportif FMMAF — MMA Jeunes &amp; Amateurs — Version 9.0 — Janvier 2025</p>
+    <p style="margin-top:0.4rem">Validé par le comité directeur de la FFBoxe le 17 janvier 2025 &nbsp;|&nbsp; <a href="https://www.fmmaf.fr" target="_blank" rel="noopener">fmmaf.fr</a></p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu?.classList.toggle('open'));
+  </script>
+</body>
+</html>

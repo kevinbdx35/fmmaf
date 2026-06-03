@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Équipements" active="equipements">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>🥊 Équipements &amp; Zone de Combat</h1>
+      <p>Équipements obligatoires des combattant·e·s et exigences de la surface de combat</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="section">
+      <h2>Tableau Récapitulatif des Équipements</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Équipement</th><th>U14 / U16 / U18</th><th>U21B / AMA-B (21+)</th><th>U21A / AMA-A (21+)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bandages des mains</td><td class="td-partial">Facultatif (tolérance bandes en tissu)</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+            <tr><td>Gants (mitaines)</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+            <tr><td>Protège-dents</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+            <tr><td>Coquille (hommes)</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+            <tr><td>Coquille (femmes)</td><td class="td-partial">Facultative</td><td class="td-partial">Facultative</td><td class="td-partial">Facultative</td></tr>
+            <tr><td>Short</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+            <tr><td>Protège-tibias chaussettes</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+            <tr><td>Rashguard</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td><td class="td-allowed">Obligatoire</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Les Mitaines (Gants MMA)</h2>
+      <div class="alert alert-red">
+        <span class="alert-icon">🚫</span>
+        <div>Il doit être <strong>impossible de tendre les doigts</strong> avec les mitaines. Les participant·e·s ne sont pas autorisé·e·s à fournir leurs propres gants.</div>
+      </div>
+      <h3>Caractéristiques obligatoires</h3>
+      <ul>
+        <li><strong>Pouce attaché</strong></li>
+        <li><strong>Paume ouverte</strong> pour faciliter le travail de saisie en lutte</li>
+        <li>Rembourrage en mousse préformée « boule » : entre <strong>6 et 8 onces</strong></li>
+        <li>Poignet maintenu par une sangle velcro</li>
+        <li>Les mitaines doivent être <strong>neuves</strong> et en bon état</li>
+        <li>Structure identique pour les 2 combattant·e·s</li>
+        <li>Les gants doivent être identifiés comme pour compétitions amateurs</li>
+      </ul>
+      <h3>Marquage</h3>
+      <p>Les mitaines sont scellées à l'entrée de la cage avec du ruban adhésif en textile <strong>rouge ou bleu</strong> selon le coin de l'athlète. Le grammage doit être clairement lisible à l'extérieur ou sur étiquette intérieure.</p>
+    </div>
+
+    <div class="section">
+      <h2>Le Short</h2>
+      <ul>
+        <li>Short d'arts martiaux mixtes ou short de compression</li>
+        <li>Sans poches, boutons, fermetures éclair ou matière étrangère</li>
+        <li>Aucun lacet extérieur n'est permis</li>
+        <li>Le short ne doit pas être trop long ni trop large (<em>pli inférieur des jambes du short sous les genoux en position debout</em>)</li>
+        <li class="rule-item rule-item-forbidden" style="list-style:none; margin-top:0.3rem;">Les tenues couvrant intégralement les jambes (spats ou pantalon en lycra) sont interdites</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Les Protège-Tibias</h2>
+      <div class="alert alert-orange">
+        <span class="alert-icon">⚠️</span>
+        <div>L'utilisation de protège-tibias est <strong>obligatoire</strong> pour les compétitions amateurs.</div>
+      </div>
+      <ul>
+        <li>Uniquement protège-tibias en <strong>textile néoprène à enfiler</strong></li>
+        <li>Doit aussi couvrir les métatarses</li>
+        <li>Protège-tibias à fermeture velcro ou à boucle : <strong>interdits</strong></li>
+        <li>Aucun élément solide ne doit être constaté</li>
+        <li>La protection peut être stabilisée avec une bande adhésive type « sparadrap » uniquement</li>
+        <li>Les concurrent·e·s ne peuvent porter <strong>aucune chaussure</strong> pendant le combat</li>
+        <li>Le combattant doit se déchausser juste avant d'entrer dans la cage</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Le Maillot de Corps ou « Rashguard »</h2>
+      <ul>
+        <li>Tissu <strong>extensible obligatoire</strong></li>
+        <li>Manches <strong>courtes</strong> obligatoires</li>
+        <li>Aucun accessoire autorisé (bouton pression, fermeture éclair, poche, zip…)</li>
+        <li>Doit être bien plaqué au corps</li>
+        <li>Rashguard manches longues + collants longs (grappling spats) : possibles avec accord des officiels et notification écrite</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>La Coquille / Protection Génitale</h2>
+      <ul>
+        <li>Tous les concurrents masculins : obligatoire, sans partie métallique</li>
+        <li>En plastique ou type Muay Thaï en fer fixé par des lacets</li>
+        <li>Compétitrices féminines : facultative mais autorisée</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Le Protège-Dents</h2>
+      <div class="alert alert-red">
+        <span class="alert-icon">🚫</span>
+        <div>Les protège-dents de <strong>couleur rouge ou partiellement rouge ne sont pas autorisés</strong>. Le combat ne peut débuter tant que les deux compétiteur·rice·s n'ont pas leurs protège-dents en place.</div>
+      </div>
+      <ul>
+        <li>Bien ajusté, objet d'examen et d'approbation avant le combat</li>
+        <li>Norme AFNOR XP S72-427 (Mars 2017) : adaptation aux arcades maxillaires, absorption d'énergie, ventilation buccale</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Autres Règles de Tenue</h2>
+      <ul>
+        <li>Chaque concurrent·e doit être propre, avec les ongles coupés courts</li>
+        <li>La peau doit être sèche et vierge de tout enduit avant le combat</li>
+        <li>La vaseline est exclusivement réservée au cutman</li>
+        <li>Lunettes, lentilles dures, bijoux, piercing y compris sur la langue : <strong>interdits</strong></li>
+        <li>Cheveux longs : maintenus obligatoirement par un objet non rigide</li>
+        <li>Chevillières/genouillères sans rembourrage ni parties dures : autorisées</li>
+        <li>Aucun pansement ni strapping sans approbation du médecin</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>La Zone de Combat</h2>
+      <div class="two-col">
+        <div>
+          <h3>Enceinte fermée (cage)</h3>
+          <ul>
+            <li>Forme : carrée, circulaire, hexagonale ou octogonale</li>
+            <li>Dimension minimum : <strong>7m × 7m</strong></li>
+            <li>Dimension maximum : <strong>11m × 11m</strong></li>
+            <li>Clôture : maillage à simple torsion de fils métalliques plastifiés</li>
+            <li>Hauteur des panneaux : <strong>1,8m à 2m</strong></li>
+            <li>Toute partie métallique recouverte de rembourrage 2cm minimum</li>
+            <li>Au moins 1 entrée (2 entrées maximum)</li>
+            <li>Peut être installée sur plateforme de 1m à 1,2m du sol</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ring</h3>
+          <ul>
+            <li>Dimensions : <strong>8,50m × 8,50m</strong> (extérieur) / <strong>7,30m × 7,30m</strong> (intérieur)</li>
+            <li>5 cordes minimum, diamètre 3 à 5cm</li>
+            <li>Poteaux peints : rouge (coin rouge), bleu (coin bleu), blanc (coins neutres)</li>
+            <li>Sol rembourré 4 à 5cm de mousse haute densité (120 kg/m³)</li>
+            <li>Recouvert d'une toile suffisamment épaisse, bien tendue et non glissante</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Sol de la zone de combat</h3>
+      <ul>
+        <li>Rembourrage : <strong>4 à 5cm de mousse haute densité</strong> (capacité d'absorption similaire à une mousse polyéthylène densité 120 kg/m³)</li>
+        <li>Revêtement uniforme couvrant toute la surface</li>
+        <li>Plancher horizontal, solide, sans aspérité</li>
+        <li>Température de la salle : <strong>minimum 18°C, maximum 30°C</strong></li>
+        <li>Éclairage minimum : <strong>300 lux</strong> sur l'aire de combat</li>
+      </ul>
+      <div class="alert alert-blue" style="margin-top:1rem;">
+        <span class="alert-icon">📏</span>
+        <div>L'espace officiel de compétition est délimité par des barrières placées à <strong>3,50 mètres minimum</strong> de l'aire de combat. L'unique accès est obligatoirement contrôlé.</div>
+      </div>
+    </div>
+
+  </div>
+</Layout>

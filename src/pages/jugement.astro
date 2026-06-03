@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Le Jugement" active="jugement">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>⚖️ Le Jugement</h1>
+      <p>Critères de jugement, système 10 points, critères 3D et efficacité technique</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="section">
+      <h2>Critères de jugement — Ordre de priorité</h2>
+      <p>Les juges évaluent selon 3 critères dans cet ordre de priorité :</p>
+
+      <div class="table-wrap" style="margin-top:1rem;">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Critère</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-highlight">1</td>
+              <td><strong>Percussions et/ou préhensions effectives</strong></td>
+              <td>
+                Frappes autorisées ayant un impact immédiat ou cumulable pouvant contribuer à l'arrêt du combat.
+                <strong>Le critère d'impact IMMÉDIAT prime sur le cumulatif.</strong>
+                Inclut : amenée au sol réussie, tentative de finalisation, renversement avec contrôle avantageux.
+              </td>
+            </tr>
+            <tr>
+              <td class="td-center" style="color:var(--text-muted);">2</td>
+              <td><strong>Agressivité effective</strong></td>
+              <td>
+                Tentatives agressives de mettre fin au combat.
+                <em>Pris en compte SI ET SEULEMENT SI l'efficacité des percussions/préhension est absolument équilibrée.</em>
+              </td>
+            </tr>
+            <tr>
+              <td class="td-center" style="color:var(--text-muted);">3</td>
+              <td><strong>Contrôle de la zone de combat</strong></td>
+              <td>
+                Déterminer qui dicte le rythme, le lieu et le positionnement.
+                <em>Pris en compte SI ET SEULEMENT SI les deux premiers critères sont absolument équilibrés. Très rarement évalué.</em>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-blue" style="margin-top:1rem;">
+        <span class="alert-icon">📌</span>
+        <div>
+          <strong>Définition « Effective » :</strong> dont la réalité est incontestable, qui produit un effet réel, tangible.
+          <br/>Une amenée au sol réussie ne se limite pas à un simple changement de position — elle doit être suivie d'un schéma offensif prolongeant son application.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Le Pointage des Rounds — Système 10 Points</h2>
+      <p>Tous les combats sont évalués et notés par <strong>3 juges indépendants</strong> sur une base de <strong>10 points</strong> (« Ten Points Must System »).</p>
+      <p>Chaque juge doit juger indépendamment le mérite des deux combattant·e·s.</p>
+      <p><strong>Chaque round doit se voir désigner un·e vainqueur·e.</strong> Une égalité doit rester un cas extrêmement rare.</p>
+
+      <div class="score-grid" style="margin-top:1rem;">
+        <div class="score-badge score-10-10">10 – 10</div>
+        <div class="score-desc" style="background:#f0f0f0;">Égalité sur tous les critères de jugement (cas très rare)</div>
+
+        <div class="score-badge score-10-9">10 – 9</div>
+        <div class="score-desc" style="background:var(--green-light);">Domination légère durant le round</div>
+
+        <div class="score-badge score-10-8">10 – 8</div>
+        <div class="score-desc" style="background:var(--orange-light);">Domination importante — nécessite les <strong>critères 3D</strong> (Domination + Dommage + Durée)</div>
+
+        <div class="score-badge score-10-7">10 – 7</div>
+        <div class="score-desc" style="background:var(--red-light);">Domination à la limite du surclassement (très exceptionnel)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Les Critères 3D — Pour la notation 10-8</h2>
+      <p>Trois critères permettent l'attribution de la notation <strong>10-8</strong> d'un round. Les <strong>3 critères doivent être présents simultanément</strong> :</p>
+
+      <div class="info-grid" style="grid-template-columns: repeat(3, 1fr); margin-top:1rem;">
+        <div class="info-card" style="border-top:4px solid var(--blue); text-align:left; padding:1.25rem;">
+          <span class="value" style="font-size:1.5rem; margin-bottom:0.5rem;">D1</span>
+          <strong style="display:block; margin-bottom:0.4rem; color:var(--blue);">Domination</strong>
+          <p style="font-size:0.85rem;">Un combattant est dominant lorsqu'il est auteur de frappes et/ou préhensions effectives sans contre-attaque de son adversaire. Ce dernier ne fait que défendre sans réaction majeure pouvant inverser le cours du combat.</p>
+        </div>
+        <div class="info-card" style="border-top:4px solid var(--red); text-align:left; padding:1.25rem;">
+          <span class="value" style="font-size:1.5rem; margin-bottom:0.5rem; color:var(--red);">D2</span>
+          <strong style="display:block; margin-bottom:0.4rem; color:var(--red);">Dommage</strong>
+          <p style="font-size:0.85rem;">Les dommages effectifs dispensés par un combattant sur son adversaire. Ils peuvent être visuels (bleus, contusions, saignements, rougeurs…) mais aussi non-visuels (douleurs internes, contusions musculaires…).</p>
+        </div>
+        <div class="info-card" style="border-top:4px solid var(--orange); text-align:left; padding:1.25rem;">
+          <span class="value" style="font-size:1.5rem; margin-bottom:0.5rem; color:var(--orange);">D3</span>
+          <strong style="display:block; margin-bottom:0.4rem; color:var(--orange);">Durée</strong>
+          <p style="font-size:0.85rem;">Le critère de durée est rempli lorsqu'on observe les critères Domination et Dommage sur une durée majeure et significative du round.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>L'Efficacité Technique</h2>
+      <p>Quelle que soit la dimension considérée, l'avantage de notation est prioritairement accordé aux <strong>techniques qui concourent à une mise hors de combat immédiate</strong>.</p>
+
+      <h3>Concernant les percussions</h3>
+      <p>Les techniques réglementaires permettant un avantage tactique sont valorisées.</p>
+
+      <h3>Concernant la lutte, les projections et les soumissions</h3>
+      <ul>
+        <li>L'amenée au sol réussie est une <strong>attaque au moyen d'une mise à terre</strong> (pas un simple changement de position)</li>
+        <li>Les tentatives de soumission qui fatiguent l'adversaire sont valorisées par rapport à celles facilement défendues</li>
+        <li>Les projections avec <strong>grande amplitude</strong> et impact sont valorisées par rapport aux amenées par accrochage</li>
+        <li>Les combattant·e·s « au-dessus » et « en-dessous » sont jugé·e·s en fonction de l'impact/efficacité de leurs actions</li>
+      </ul>
+
+      <h3>La Combativité</h3>
+      <p>La combativité est définie comme la <strong>volonté de mener le combat à son terme</strong> par finalisation, abandon ou toute autre forme de mise hors de combat.</p>
+      <p>Attaquer un·e adversaire sans résultat ni impact ne doit pas être pris en compte dans les évaluations des juges. La combativité n'est prise en compte que si aucun ascendant n'est généré par les techniques des deux adversaires.</p>
+    </div>
+
+    <div class="section">
+      <h2>Résumé pratique du jugement</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Ce qui est valorisé</th><th>Ce qui est peu valorisé</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Frappes avec impact immédiat</li>
+                  <li>Amenée au sol + schéma offensif</li>
+                  <li>Tentative de soumission efficace</li>
+                  <li>Projections avec amplitude</li>
+                  <li>Dommages visibles ou ressentis</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Frappes sans impact notable</li>
+                  <li>Amenée au sol sans suite offensive</li>
+                  <li>Soumission facilement défendue</li>
+                  <li>Agressivité sans résultat</li>
+                  <li>Contrôle de zone passif</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</Layout>

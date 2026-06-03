@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Les Officiels" active="officiels">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>👨‍⚖️ Les Officiels</h1>
+      <p>Rôles et responsabilités de chaque officiel lors d'une compétition de MMA</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="alert alert-blue" style="margin-bottom:1.5rem;">
+      <span class="alert-icon">🎯</span>
+      <div><strong>Objectif principal des officiels :</strong> la préservation de l'intégrité physique des sportifs. Tous les officiels doivent être licencié·e·s à la FMMAF.</div>
+    </div>
+
+    <div class="section">
+      <h2>Le ou la Délégué·e Officiel·le</h2>
+      <div class="alert alert-orange">
+        <span class="alert-icon">⚠️</span>
+        <div>La présence d'un·e délégué·e représentant l'autorité fédérale est <strong>obligatoire</strong> pour chaque compétition. Il ou elle peut être dédié·e à plusieurs cages.</div>
+      </div>
+
+      <h3>Avant l'organisation</h3>
+      <ul>
+        <li>Vérifier l'autorisation fédérale, les documents officiels (fight card, licences)</li>
+        <li>Contrôler les certificats médicaux et le passeport sportif de chaque combattant·e</li>
+        <li>Vérifier la conformité de la surface de combat et les mesures de sécurité</li>
+        <li>Sélectionner les ressources FMMAF qui officieront lors de la manifestation</li>
+      </ul>
+
+      <h3>Pendant l'organisation</h3>
+      <ul>
+        <li>S'assurer de la présence continue du médecin, du présentateur et du chronométreur</li>
+        <li>Vérifier les annonces, les avertissements, les pèses et la conformité des mitaines</li>
+        <li>Remplir les livrets sportifs si le dispositif est disponible</li>
+      </ul>
+
+      <h3>Après l'organisation</h3>
+      <ul>
+        <li>Compléter et signer le procès-verbal de l'organisation</li>
+        <li>Reporter les incidents, les blessures et les avis médicaux</li>
+        <li>S'assurer que le médecin a bien complété le portail Vigi-Commotions</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Le ou la Responsable des Scores (Scorekeeper)</h2>
+      <div class="alert alert-orange">
+        <span class="alert-icon">⚠️</span>
+        <div>La présence d'un·e responsable des scores est <strong>obligatoire</strong> pour chaque compétition. Cette fonction peut être réalisée par un·e juge.</div>
+      </div>
+      <ul>
+        <li>À la fin de chaque round, fait le tour de l'aire de combat pour vérifier que les juges ont scoré sans lire le score</li>
+        <li>À la fin du combat, comptabilise les bulletins et rend la décision annoncée par le présentateur</li>
+        <li>Confie les bulletins au délégué officiel</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>L'Arbitre</h2>
+      <div class="alert alert-red">
+        <span class="alert-icon">🚨</span>
+        <div>La présence d'un·e arbitre au minimum est <strong>obligatoire</strong> pour chaque compétition. <strong>Le premier devoir de l'arbitre est de protéger et de garantir la santé des combattant·e·s tout au long du combat.</strong></div>
+      </div>
+
+      <h3>Compétences requises</h3>
+      <ul>
+        <li>PSC1 (ou équivalent : BLS, First Aid Certification)</li>
+        <li>Qualification de juge/arbitre en MMA reconnue par la FMMAF</li>
+        <li>Licence FMMAF obligatoire</li>
+      </ul>
+
+      <h3>Conduite avant la rencontre</h3>
+      <ul>
+        <li>Entre en premier dans l'aire de combat et en contrôle la conformité</li>
+        <li>Réunit les combattant·e·s et les entraîneur·e·s pour expliquer les règles</li>
+        <li>S'assure que les combattant·e·s ne portent ni pansement, ni agrafe, ne sont pas enduits de graisse</li>
+        <li>S'assure de la présence du médecin et de la disponibilité des juges</li>
+      </ul>
+
+      <h3>Conduite pendant la rencontre</h3>
+      <ul>
+        <li>Ne perd jamais le contrôle du combat et veille à l'application stricte du fair-play</li>
+        <li>Utilise principalement les commandements « FIGHT », « STOP » et « STOP TIME »</li>
+        <li>Peut s'intercaler entre les deux combattant·e·s lors des échanges au sol</li>
+        <li>Seul·e autorisé·e à laisser entrer le coin du combattant (sauf KO/TKO où c'est le médecin)</li>
+      </ul>
+
+      <h3>Pouvoirs de l'arbitre</h3>
+      <div class="two-col">
+        <div>
+          <p><strong>L'arbitre peut :</strong></p>
+          <ul>
+            <li>Arrêter le combat à n'importe quel moment</li>
+            <li>Consulter le médecin sur la gravité d'une blessure</li>
+            <li>Donner des avertissements</li>
+            <li>Déduire des points</li>
+            <li>Consulter les juges pour une action litigieuse</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>L'arbitre doit disqualifier un·e combattant·e qui :</strong></p>
+          <ul>
+            <li>A reçu <strong>3 avertissements</strong> au cours du combat</li>
+            <li>A délivré un coup bas volontaire empêchant la reprise</li>
+            <li>N'obéit pas aux ordres</li>
+            <li>A commis une faute grave</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Les Commandements de l'Arbitre</h3>
+      <div class="commands-grid">
+        <div class="command-card cmd-fight">
+          <span class="cmd">« FIGHT »</span>
+          <p style="font-size:0.85rem;"><strong>Déclenche le chronomètre.</strong><br/>Pour démarrer le combat ou après un STOP pour reprendre.</p>
+        </div>
+        <div class="command-card cmd-stop">
+          <span class="cmd">« STOP »</span>
+          <p style="font-size:0.85rem;"><strong>N'arrête PAS le chronomètre.</strong><br/>Pour arrêter le combat en fin de round, donner un avertissement ou disqualifier.</p>
+        </div>
+        <div class="command-card cmd-stoptime">
+          <span class="cmd">« STOP TIME »</span>
+          <p style="font-size:0.85rem;"><strong>Arrête le chronomètre.</strong><br/>Coup irrégulier, perte de conscience, sortie de zone, intervention médicale, remise du protège-dents.</p>
+        </div>
+      </div>
+
+      <div class="alert alert-orange" style="margin-top:1rem;">
+        <span class="alert-icon">📌</span>
+        <div>En cas de non-respect de la règle du coin neutre « NE PAS PARLER / NO COACHING », le combattant peut être sanctionné par la <strong>perte d'un point</strong>.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Les Juges</h2>
+      <div class="alert alert-orange">
+        <span class="alert-icon">⚠️</span>
+        <div>La présence de <strong>3 juges par surface de combat</strong> est obligatoire pour chaque compétition.</div>
+      </div>
+      <ul>
+        <li>Les trois juges travaillent séparément, simultanément et sans communication</li>
+        <li>Chaque juge observe attentivement le combat depuis un côté de la surface de combat</li>
+        <li>Ne doit pas parler aux combattant·e·s ou toute autre personne pendant le combat</li>
+        <li>Ne peut quitter son siège qu'après l'annonce de la décision</li>
+        <li>Remplit son bulletin de façon objective, neutre et impartiale</li>
+        <li>La feuille de score doit être lisible, sans rature, et signée</li>
+      </ul>
+      <div class="alert alert-red">
+        <span class="alert-icon">🚫</span>
+        <div><strong>Aucune réclamation n'est recevable</strong> concernant les notations et décisions des juges, ni la prestation et les décisions de l'arbitre. Délai de 48h pour les incidents majeurs (erreur de calcul, problème chronométrique…).</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Les Inspecteurs</h2>
+      <p><strong>2 inspecteurs par combat</strong> (1 par coin : rouge et bleu). Un·e juge/arbitre peut tenir ce rôle.</p>
+      <div class="two-col">
+        <div>
+          <p><strong>Avant le combat :</strong></p>
+          <ul>
+            <li>Accompagne l'athlète et son équipe du vestiaire jusqu'à la cage</li>
+            <li>Vérifie que la couleur du coin correspond au combattant</li>
+            <li>Scelle les mitaines avec du scotch textile bleu ou rouge</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>Pendant le round :</strong></p>
+          <ul>
+            <li>Veille à ce que les entraîneur·e·s restent assis·es</li>
+            <li>Lors de la minute de repos : vérifie que le coin est propre et sec</li>
+            <li>Vérifie que le combattant porte son protège-dents</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Le Chronométreur (Timekeeper)</h2>
+      <p>Chaque combat nécessite un chronométreur. Un·e juge peut tenir ce rôle.</p>
+      <ul>
+        <li>Contrôle le nombre et la durée des rounds ainsi que les intervalles</li>
+        <li>Signale le début des rounds, la fin des rounds, et les 10 dernières secondes</li>
+        <li>Arrête le chronomètre au commandement « STOP TIME » uniquement (pas au « STOP »)</li>
+        <li>La durée des temps pris par le chronométreur ne peut être discutée</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Le Gardien (Pit)</h2>
+      <p>Chaque combat nécessite un gardien par surface de combat. Un·e juge peut tenir ce rôle.</p>
+      <ul>
+        <li>Est à l'entrée de l'aire de combat et vérifie la conformité de la tenue des athlètes</li>
+        <li>Après vérification, invite l'athlète à se rendre dans l'aire de combat</li>
+        <li>Pendant le combat, reste assis·e autour de l'aire de combat</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Les Soigneurs (Cutmen)</h2>
+      <p>Les soigneurs doivent être en possession d'une certification reconnue par la FMMAF (certifications IMMAF grade C, B et A reconnues).</p>
+      <div class="two-col">
+        <div>
+          <p><strong>Avant le combat :</strong></p>
+          <ul>
+            <li>Bandages des mains et vaseline sur le visage</li>
+            <li>Les bandages doivent être validés par un officiel FMMAF</li>
+          </ul>
+          <p><strong>Spécifications des bandages :</strong></p>
+          <ul>
+            <li>Gaze de coton : max 18m de long, 5cm de large</li>
+            <li>Ruban adhésif chirurgical/oxyde de zinc : 3m × 2,5cm par main</li>
+            <li>Bandages uniformément répartis sur toute la main</li>
+            <li>Tête des métacarpiens couverte uniquement de gaze (sans adhésif)</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>Pendant le combat :</strong></p>
+          <ul>
+            <li>N'intervient que lors des minutes de repos</li>
+            <li>Sous couvert d'une autorisation médicale explicite</li>
+          </ul>
+          <p><strong>Après le combat :</strong></p>
+          <ul>
+            <li>Soins basiques post-traumatiques (application de glace)</li>
+            <li>Avec accord du médecin : poses de strips sur lacérations mineures</li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert alert-red">
+        <span class="alert-icon">🚫</span>
+        <div>Le cutman ne peut avoir un rôle curatif que sous couvert d'une <strong>autorisation médicale explicite</strong>.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>L'Encadrement du Combattant</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Règle</th><th>Détail</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Composition du coin</td><td>1 entraîneur·e habilité·e + 1 assistant·e (max 2 personnes)</td></tr>
+            <tr><td>Qualification obligatoire</td><td>BF2 FMMAF (entraîneur·e résident·e français·e)</td></tr>
+            <tr><td>Tenue vestimentaire</td><td>Survêtement + tee-shirt/polo + short de sport + chaussures de sport (pas de claquettes, tongs ou sandales)</td></tr>
+            <tr><td>Boissons autorisées</td><td>Uniquement eau conditionnée dans emballages translucides sans additifs. <strong>Boissons énergisantes formellement interdites.</strong></td></tr>
+            <tr><td>Pendant les rounds</td><td>Entraîneur·e et assistant·e doivent rester assis·es durant toute la durée des rounds</td></tr>
+            <tr><td>Minute de repos</td><td>Maximum 2 membres dans l'aire de combat (si cutman intervient : 1 seul membre encadrement)</td></tr>
+            <tr><td>Abandon</td><td>Seul·e l'entraîneur·e habilité·e peut jeter l'éponge (serviette ou tissu sur la surface de combat)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</Layout>

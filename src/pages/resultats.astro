@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Types de Résultats" active="resultats">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>🏆 Les Types de Résultats</h1>
+      <p>Toutes les façons de gagner ou de conclure un combat en MMA amateur</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="section">
+      <h2>Victoire par Soumission</h2>
+      <p>Une victoire par soumission est prononcée lorsqu'un·e combattant·e reconnaît sa défaite :</p>
+      <div class="two-col">
+        <div>
+          <p><strong>Verbalement :</strong></p>
+          <ul>
+            <li>En criant « Tap » ou « Stop »</li>
+          </ul>
+          <p style="margin-top:0.75rem;"><strong>Physiquement :</strong></p>
+          <ul>
+            <li>En tapant au moins <strong>2 fois</strong> son adversaire ou sur le tapis avec sa main ou son pied</li>
+          </ul>
+        </div>
+        <div>
+          <div class="alert alert-orange">
+            <span class="alert-icon">⚠️</span>
+            <div><strong>Soumission technique :</strong> lorsqu'un·e athlète pris dans une soumission n'est plus en mesure d'abandonner de lui-même et que l'arbitre se voit dans l'obligation de mettre fin au combat (ex: perte de connaissance lors d'un étranglement). L'arbitre a le droit de déclarer une victoire par soumission s'il estime que le/la combattant·e ne peut s'extraire sans blessure.</div>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-blue" style="margin-top:0.75rem;">
+        <span class="alert-icon">👶</span>
+        <div>Pour les U14, U16 et U18 : si un·e athlète ne commence pas à défendre immédiatement lorsqu'un étranglement est engagé, <strong>l'arbitre arrête le combat</strong>.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Victoire par Knockout (KO) ou Technical Knockout (TKO)</h2>
+      <ul>
+        <li>Arrêt du combat par l'arbitre</li>
+        <li>Arrêt du combat par l'arbitre sur l'avis du médecin et/ou du coin (jet de l'éponge)</li>
+      </ul>
+      <div class="table-wrap" style="margin-top:1rem;">
+        <table>
+          <thead><tr><th>Type</th><th>Définition</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>KO (Knockout)</strong></td>
+              <td>Perte de connaissance suite à un coup reçu à la tête. Commotion cérébrale avec perte de connaissance. Le/la combattant·e est considéré·e comme n'étant plus apte à se défendre → arrêt immédiat.</td>
+            </tr>
+            <tr>
+              <td><strong>TKO (Technical Knockout)</strong></td>
+              <td>L'arbitre estime qu'à la suite de coups reçus, le/la combattant·e se trouve dans une situation dangereuse mais sans perte de connaissance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-red" style="margin-top:1rem;">
+        <span class="alert-icon">🚨</span>
+        <div>Une défaite par TKO suite à une ou plusieurs frappes à la tête <strong>sera considérée comme un K.O.</strong> pour les exigences médicales (délais de repos obligatoires).</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Victoire par Décision — Les 9 Types</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Type de décision</th><th>Définition</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-center">1</td>
+              <td><strong>Décision unanime</strong></td>
+              <td>Les 3 juges attribuent la victoire au même combattant</td>
+            </tr>
+            <tr>
+              <td class="td-center">2</td>
+              <td><strong>Décision partagée</strong></td>
+              <td>2 juges pour un combattant, 1 juge pour son adversaire</td>
+            </tr>
+            <tr>
+              <td class="td-center">3</td>
+              <td><strong>Décision à la majorité</strong></td>
+              <td>2 juges pour un combattant, 1 juge prononce une égalité</td>
+            </tr>
+            <tr>
+              <td class="td-center">4</td>
+              <td><strong>Égalité (Draw)</strong></td>
+              <td>
+                <ul style="margin:0; padding-left:1rem;">
+                  <li><em>Unanimité :</em> les 3 juges prononcent l'égalité</li>
+                  <li><em>Majorité :</em> 2 juges sur 3 indiquent une égalité</li>
+                  <li><em>Partagée :</em> les 3 juges optent chacun pour une décision différente</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="td-center">5</td>
+              <td><strong>Disqualification</strong></td>
+              <td>Un·e athlète est déclaré·e disqualifié·e par un arbitre suite à une faute ou l'accumulation de plusieurs fautes. Un combattant non-prêt ou absent au moment de combattre sera disqualifié.</td>
+            </tr>
+            <tr>
+              <td class="td-center">6</td>
+              <td><strong>Forfait (Walk Over)</strong></td>
+              <td>Un combattant ne se présente pas sur l'aire de combat à l'appel de son nom, suite à une incapacité</td>
+            </tr>
+            <tr>
+              <td class="td-center">7</td>
+              <td><strong>Égalité Technique</strong></td>
+              <td>Blessure simultanée sans faute prépondérante de l'un ou l'autre, ou blessé·e mené·e sur les cartes de score suite à une faute non intentionnelle</td>
+            </tr>
+            <tr>
+              <td class="td-center">8</td>
+              <td><strong>Décision Technique</strong></td>
+              <td>Victoire accordée au combattant en tête sur les cartes de score suite à une blessure non intentionnelle forçant l'arrêt (après la majorité des rounds accomplie)</td>
+            </tr>
+            <tr>
+              <td class="td-center">9</td>
+              <td><strong>Sans Décision (No Contest)</strong></td>
+              <td>L'arbitre arrête le combat lors de circonstances extérieures (panne d'électricité, problème matériel, conditions atmosphériques, indisponibilité prolongée du médecin…). Ne peut intervenir qu'avant que la majorité des rounds aient été accomplis.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Réclamations</h2>
+      <div class="alert alert-red">
+        <span class="alert-icon">🚫</span>
+        <div>
+          <strong>Aucune réclamation n'est recevable</strong> concernant :
+          <ul style="margin-top:0.5rem; padding-left:1.5rem;">
+            <li>Les notations et les décisions des juges</li>
+            <li>La prestation et les décisions de l'arbitre</li>
+          </ul>
+        </div>
+      </div>
+      <div class="alert alert-orange" style="margin-top:0.75rem;">
+        <span class="alert-icon">📋</span>
+        <div>
+          Les réclamations sont recevables pour les <strong>cas d'incident majeur</strong> (erreur de chronomètre, erreur de calcul sur les feuilles de juges, problème matériel insoluble avec la surface de combat…).
+          <br/>Délai : <strong>48 heures maximum</strong>. Via formulaire dédié sur le site internet de la FMMAF.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Définition & Durée" active="definition">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>📖 Définition &amp; Durée des combats</h1>
+      <p>Introduction au MMA, durée réglementaire et conditions d'arrêt du combat</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="section">
+      <h2>Définition du MMA</h2>
+      <p>
+        Par <strong>MMA</strong> ou « arts martiaux mixtes », on entend sport de combat d'opposition duelliste
+        autorisant l'utilisation de techniques <strong>référencées de percussion et de préhension debout et au sol</strong>
+        dans un cadre spatio-temporel délimité.
+      </p>
+      <p>
+        Sur le plan technique, le MMA couvre toutes les distances des sports de combat d'une manière très spécifique.
+        La surface de combat close, l'utilisation des mitaines de combat et les règles spécifiques à la discipline
+        entraînent une expression très différente de ces distances.
+      </p>
+      <p>
+        Ces particularités font du MMA non pas l'opposition ou la combinaison de plusieurs styles
+        mais une discipline à part entière. La mise en œuvre de ces techniques peut conduire
+        à la mise hors de combat de l'un des compétiteurs ou compétitrices.
+      </p>
+      <div class="alert alert-blue">
+        <span class="alert-icon">📋</span>
+        <div>
+          Pour être autorisé·e à combattre, tout·e combattant·e doit être en possession d'un
+          <strong>passeport sportif</strong> délivré par la FFBoxe avec la vignette de l'année sportive en cours.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Durée des combats amateurs</h2>
+      <p>La durée des combats varie selon les catégories d'âges. <strong>La catégorie d'âge est définie en fonction de l'âge à la date de la compétition.</strong></p>
+
+      <h3>Pour les moins de 18 ans : U14, U16, U18</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Âge</th>
+              <th>Format</th>
+              <th>Rounds</th>
+              <th>Max combats/jour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>U14</strong> — Youth C</td>
+              <td>12-13 ans</td>
+              <td class="td-highlight">1 × 3 minutes</td>
+              <td class="td-center">1 round</td>
+              <td class="td-center">3 max</td>
+            </tr>
+            <tr>
+              <td><strong>U16</strong> — Youth B</td>
+              <td>14-15 ans</td>
+              <td class="td-highlight">1 × 4 minutes</td>
+              <td class="td-center">1 round</td>
+              <td class="td-center">3 max</td>
+            </tr>
+            <tr>
+              <td><strong>U18</strong> — Youth A</td>
+              <td>16-17 ans</td>
+              <td class="td-highlight">3 × 2 minutes</td>
+              <td class="td-center">3 rounds</td>
+              <td class="td-center">3 max</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Pour les 18 ans et plus : U21 et 21+</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Âge</th>
+              <th>Format</th>
+              <th>Max combats/jour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>U21</strong> (Junior) — AMA-A et AMA-B</td>
+              <td>18-20 ans</td>
+              <td class="td-highlight">3 × 3 minutes</td>
+              <td class="td-center">2 max (AMA-B) / 2 max (AMA-A)</td>
+            </tr>
+            <tr>
+              <td><strong>21+</strong> (Senior) — AMA-A et AMA-B</td>
+              <td>21 ans et +</td>
+              <td class="td-highlight">3 × 3 minutes</td>
+              <td class="td-center">2 max</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-orange">
+        <span class="alert-icon">⏱</span>
+        <div>
+          <strong>1 minute de repos</strong> est observée entre chaque round.
+          Le combat est arbitré par un seul et même arbitre du premier au dernier round.
+          Chaque commandement « STOP TIME » entraîne l'arrêt du chronomètre jusqu'au signal « FIGHT ».
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Conditions d'arrêt du combat</h2>
+      <p>L'arbitre est la <strong>seule personne</strong> à pouvoir intervenir pour interrompre le combat.</p>
+      <p>L'arbitre peut interrompre le combat dans l'un des cas suivants :</p>
+      <ul class="rule-list">
+        <li class="rule-item rule-item-allowed">À sa propre initiative</li>
+        <li class="rule-item rule-item-allowed">Après l'avis du médecin de compétition</li>
+        <li class="rule-item rule-item-allowed">Suite au jet de l'éponge par le coin</li>
+      </ul>
+      <p style="margin-top:1rem;">Le combat est interrompu :</p>
+      <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+        <li>À la fin du temps réglementaire</li>
+        <li>Lors de la survenue d'une mise hors de combat de l'un·e des combattant·e·s</li>
+      </ul>
+
+      <h3>Temps de récupération en cas de coup irrégulier</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Situation</th><th>Temps de récupération</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Coup bas / choc de tête / eye poke</td><td><strong>Maximum 5 minutes</strong></td></tr>
+            <tr><td>Blessure volontaire ou non volontaire</td><td><strong>Maximum 5 minutes</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Catégories de niveau (Amateurs)</h2>
+      <p>La FMMAF a défini des catégories de niveau en fonction du nombre de combats effectués :</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Catégorie</th>
+              <th>Critère d'éligibilité</th>
+              <th>Niveau grade minimum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amateur AMA-B</strong></td>
+              <td>Moins de 5 combats dans une discipline tridimensionnelle</td>
+              <td>Grade Vert</td>
+            </tr>
+            <tr>
+              <td><strong>Amateur AMA-A</strong></td>
+              <td>Plus de 4 combats dans une discipline tridimensionnelle</td>
+              <td>Grade Vert</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert alert-blue">
+        <span class="alert-icon">ℹ️</span>
+        <div>Les combats effectués en U21 sont toujours comptabilisés si le combattant passe en U21+. Dans le cas d'une expérience compétitive avérée en sports de combat, la FMMAF se garde la possibilité d'attribuer directement la classe AMA-A.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Obligation de temps de repos entre les compétitions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Classe</th><th>Combats max/jour</th><th>Repos minimum entre compétitions</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Classes sans frappes au visage (U14, U16, U18)</td>
+              <td class="td-center">3 / 2 jours consécutifs max</td>
+              <td>5 jours pleins minimum</td>
+            </tr>
+            <tr>
+              <td>Classes avec frappes au visage (U21, 21+)</td>
+              <td class="td-center">2 / 2 jours consécutifs max</td>
+              <td>5 jours pleins minimum</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</Layout>

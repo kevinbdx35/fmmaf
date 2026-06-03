@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Catégories de Poids" active="categories-poids">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>⚖️ Catégories de Poids</h1>
+      <p>Tableaux officiels FMMAF — catégories correspondant aux catégories existantes IMMAF</p>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="section">
+      <h2>Règles de pesée</h2>
+      <ul>
+        <li>La pesée s'effectue <strong>obligatoirement le jour même du combat</strong> pour les classes Amateur</li>
+        <li>Les combattant·e·s se pèsent en portant obligatoirement : <strong>sous-vêtements, maillot de bain ou maillot et short de compétition</strong></li>
+        <li><strong>Aucune tolérance de poids n'est admise</strong></li>
+        <li>La pesée s'effectue sur une balance précise à <strong>100 grammes</strong></li>
+        <li>Les catégories catch weights ne sont pas reconnues par la FMMAF</li>
+        <li>Les catégories hommes/femmes sont définies par le <strong>genre de naissance</strong></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Catégories U14 (12-13 ans) et U16 (14-15 ans)</h2>
+      <p><em>Catégories communes Garçons et Filles</em></p>
+      <div class="weight-grid">
+        <div>
+          <h3>U14 — 12/13 ans</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Catégorie</th><th>Poids max (kg)</th><th>Poids max (lbs)</th></tr></thead>
+              <tbody>
+                <tr><td>–</td><td>–31 kg</td><td>68,3 lbs</td></tr>
+                <tr><td>–</td><td>–34 kg</td><td>75 lbs</td></tr>
+                <tr><td>–</td><td>–37 kg</td><td>81,6 lbs</td></tr>
+                <tr><td>–</td><td>–40 kg</td><td>88,2 lbs</td></tr>
+                <tr><td>–</td><td>–44 kg</td><td>97 lbs</td></tr>
+                <tr><td>–</td><td>–48 kg</td><td>105,8 lbs</td></tr>
+                <tr><td>–</td><td>–52 kg</td><td>114,6 lbs</td></tr>
+                <tr><td>–</td><td>–57 kg</td><td>125,7 lbs</td></tr>
+                <tr><td class="td-highlight">Lourd+</td><td>+57 kg à 62 kg</td><td>125,7 à 136,7 lbs</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">Les combattants pesant plus de 62 kg sont regroupés ensemble en respectant un écart de poids de 5 kg maximum.</p>
+        </div>
+        <div>
+          <h3>U16 — 14/15 ans</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Catégorie</th><th>Poids max (kg)</th><th>Poids max (lbs)</th></tr></thead>
+              <tbody>
+                <tr><td>–</td><td>–40 kg</td><td>88,2 lbs</td></tr>
+                <tr><td>–</td><td>–44 kg</td><td>97 lbs</td></tr>
+                <tr><td>–</td><td>–48 kg</td><td>105,8 lbs</td></tr>
+                <tr><td>–</td><td>–52 kg</td><td>114,6 lbs</td></tr>
+                <tr><td>–</td><td>–57 kg</td><td>125,7 lbs</td></tr>
+                <tr><td>–</td><td>–62 kg</td><td>136,7 lbs</td></tr>
+                <tr><td>–</td><td>–67 kg</td><td>147,7 lbs</td></tr>
+                <tr><td>–</td><td>–72 kg</td><td>158,7 lbs</td></tr>
+                <tr><td class="td-highlight">Lourd+</td><td>+72 kg à 77,1 kg</td><td>158,7 à 170 lbs</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">Les combattants pesant plus de 77,1 kg sont regroupés ensemble en respectant un écart de poids de 5 kg maximum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Catégories U18 / U21 / 21+ (16-17 ans / 18-20 ans / 21 ans et +)</h2>
+
+      <div class="weight-grid">
+        <div>
+          <h3>Garçons</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nom</th><th>Poids max (kg)</th><th>Poids max (lbs)</th></tr></thead>
+              <tbody>
+                <tr><td>Strawweight</td><td>–52,2 kg</td><td>115 lbs</td></tr>
+                <tr><td>Flyweight</td><td>–56,7 kg</td><td>125 lbs</td></tr>
+                <tr><td>Bantamweight</td><td>–61,2 kg</td><td>135 lbs</td></tr>
+                <tr><td>Featherweight</td><td>–65,8 kg</td><td>145 lbs</td></tr>
+                <tr><td class="td-highlight">Super Lightweight</td><td>–74,8 kg</td><td>165 lbs</td></tr>
+                <tr><td class="td-highlight">Super Welterweight</td><td>–79,4 kg</td><td>175 lbs</td></tr>
+                <tr><td>Middleweight</td><td>–83,9 kg</td><td>185 lbs</td></tr>
+                <tr><td class="td-highlight">Super Middleweight</td><td>–88,4 kg</td><td>195 lbs</td></tr>
+                <tr><td>Light Heavyweight</td><td>–93,0 kg</td><td>205 lbs</td></tr>
+                <tr><td class="td-highlight">Heavyweight</td><td>–97 kg</td><td>215 lbs</td></tr>
+                <tr><td class="td-highlight">Super Heavyweight</td><td>+97 kg</td><td>+215 lbs</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h3>Filles</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nom</th><th>Poids max (kg)</th><th>Poids max (lbs)</th></tr></thead>
+              <tbody>
+                <tr><td>Atomweight</td><td>–47,7 kg</td><td>105 lbs</td></tr>
+                <tr><td>Strawweight</td><td>–52,2 kg</td><td>115 lbs</td></tr>
+                <tr><td>Flyweight</td><td>–56,7 kg</td><td>125 lbs</td></tr>
+                <tr><td>Bantamweight</td><td>–61,2 kg</td><td>135 lbs</td></tr>
+                <tr><td>Featherweight</td><td>–65,8 kg</td><td>145 lbs</td></tr>
+                <tr><td>Lightweight</td><td>–70,3 kg</td><td>155 lbs</td></tr>
+                <tr><td class="td-highlight">Super Lightweight</td><td>–74,8 kg</td><td>165 lbs</td></tr>
+                <tr><td class="td-highlight">Super Welterweight</td><td>–79,4 kg</td><td>175 lbs</td></tr>
+                <tr><td class="td-highlight">Super Middleweight</td><td>–88,4 kg</td><td>195 lbs</td></tr>
+                <tr><td>Light Heavyweight</td><td>–93,0 kg</td><td>205 lbs</td></tr>
+                <tr><td class="td-highlight">Heavyweight</td><td>–97 kg</td><td>215 lbs</td></tr>
+                <tr><td class="td-highlight">Super Heavyweight</td><td>+97 kg</td><td>+215 lbs</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.75rem;">
+        <span style="background:var(--blue-light); padding:2px 6px; border-radius:3px; color:var(--blue);">Surligné</span> = catégories spécifiques à l'amateur (non présentes dans toutes les règles professionnelles)
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Tableau récapitulatif des pesées</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Catégorie</th><th>Quand ?</th><th>Tenue de pesée</th><th>Tolérance</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>U14, U16, U18, U21, 21+</td>
+              <td>Jour même du combat</td>
+              <td>Sous-vêtements / maillot de bain / maillot + short de compétition</td>
+              <td class="td-forbidden">Aucune</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</Layout>

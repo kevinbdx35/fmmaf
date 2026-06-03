@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Layout title="Accueil" active="index">
+
+  <div class="hero">
+    <h1>Code Sportif <span>FMMAF</span></h1>
+    <p>Règles officielles du MMA Jeunes &amp; Amateurs — Fédération Française de MMA</p>
+    <div class="hero-meta">
+      <span>Version 9.0</span>
+      <span>Janvier 2025</span>
+      <span>U14 · U16 · U18 · U21 · 21+</span>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <div class="section">
+      <h2>Bienvenue sur le guide de révision</h2>
+      <p>
+        Ce site vous permet d'apprendre et de réviser le <strong>Code Sportif FMMAF version 9.0</strong>
+        (Janvier 2025), validé par le comité directeur de la Fédération Française de Boxe.
+        Il couvre l'ensemble des règles applicables aux compétitions de MMA Jeunes (U14, U16, U18)
+        et Amateurs (U21, 21+).
+      </p>
+      <div class="alert alert-blue">
+        <span class="alert-icon">ℹ️</span>
+        <div>
+          <strong>Objectif principal des officiels :</strong> la préservation de l'intégrité physique des sportifs.
+          Le premier devoir de l'arbitre est de protéger et garantir la santé des combattant·e·s tout au long du combat.
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-size:1.1rem; color:var(--text-muted); margin-bottom:0.75rem; font-weight:600;">SECTIONS DU CODE SPORTIF</h2>
+
+    <div class="card-grid">
+      <a href={`${base}/definition`} class="nav-card">
+        <span class="icon">📖</span>
+        <h3>Définition & Durée</h3>
+        <p>Définition du MMA, durée des combats par catégorie, conditions d'arrêt</p>
+      </a>
+      <a href={`${base}/officiels`} class="nav-card">
+        <span class="icon">👨‍⚖️</span>
+        <h3>Les Officiels</h3>
+        <p>Arbitre, juges, scorekeeper, inspecteurs, chronométreur, gardien, cutmen</p>
+      </a>
+      <a href={`${base}/jugement`} class="nav-card">
+        <span class="icon">⚖️</span>
+        <h3>Le Jugement</h3>
+        <p>Critères de jugement, système 10 points, critères 3D</p>
+      </a>
+      <a href={`${base}/coups-interdits`} class="nav-card" style="border-top-color: var(--red)">
+        <span class="icon">🚫</span>
+        <h3>Coups Interdits</h3>
+        <p>Liste des coups interdits, techniques interdites en amateur, procédures</p>
+      </a>
+      <a href={`${base}/categories-poids`} class="nav-card">
+        <span class="icon">⚖️</span>
+        <h3>Catégories de Poids</h3>
+        <p>Tableaux complets pour U14, U16, U18, U21 et 21+ garçons et filles</p>
+      </a>
+      <a href={`${base}/regles-age`} class="nav-card" style="border-top-color: var(--orange)">
+        <span class="icon">🎯</span>
+        <h3>Règles par Âge</h3>
+        <p>Évolutivité des règles selon la catégorie : U14, U16, U18, U21, 21+</p>
+      </a>
+      <a href={`${base}/equipements`} class="nav-card">
+        <span class="icon">🥊</span>
+        <h3>Équipements</h3>
+        <p>Mitaines, tenue, protège-tibias, protège-dents, zone de combat</p>
+      </a>
+      <a href={`${base}/resultats`} class="nav-card" style="border-top-color: var(--green)">
+        <span class="icon">🏆</span>
+        <h3>Types de Résultats</h3>
+        <p>Soumission, KO/TKO, décisions (unanime, partagée, majorité…)</p>
+      </a>
+      <a href={`${base}/medical`} class="nav-card" style="border-top-color: #e07b00">
+        <span class="icon">🏥</span>
+        <h3>Dispositif Médical</h3>
+        <p>Exigences médicales, certificats, repos obligatoires après KO</p>
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>Résumé rapide — Durée des combats</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="value">1×3 min</span>
+          <span class="label">U14 (12-13 ans)</span>
+        </div>
+        <div class="info-card">
+          <span class="value">1×4 min</span>
+          <span class="label">U16 (14-15 ans)</span>
+        </div>
+        <div class="info-card">
+          <span class="value">3×2 min</span>
+          <span class="label">U18 (16-17 ans)</span>
+        </div>
+        <div class="info-card">
+          <span class="value">3×3 min</span>
+          <span class="label">U21 & 21+ (18 ans+)</span>
+        </div>
+      </div>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">
+        ⏱ 1 minute de repos entre chaque round. Catégorie d'âge définie à la date de la compétition.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Commandements de l'arbitre</h2>
+      <div class="commands-grid">
+        <div class="command-card cmd-fight">
+          <span class="cmd">« FIGHT »</span>
+          <p style="font-size:0.85rem;">Déclenche le chronomètre. Ordonne de combattre ou de continuer.</p>
+        </div>
+        <div class="command-card cmd-stop">
+          <span class="cmd">« STOP »</span>
+          <p style="font-size:0.85rem;">N'arrête PAS le chronomètre. Ordonne de s'arrêter de combattre.</p>
+        </div>
+        <div class="command-card cmd-stoptime">
+          <span class="cmd">« STOP TIME »</span>
+          <p style="font-size:0.85rem;">Arrête le chronomètre. Coup irrégulier, perte de protection, intervention médicale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Tableau récapitulatif — Résultats possibles</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Type de décision</th><th>Condition</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="td-center">1</td><td><strong>Victoire par soumission</strong></td><td>Tap, abandon verbal ou soumission technique</td></tr>
+            <tr><td class="td-center">2</td><td><strong>KO / TKO</strong></td><td>Arrêt de l'arbitre, médecin ou coin</td></tr>
+            <tr><td class="td-center">3</td><td><strong>Décision unanime</strong></td><td>3 juges pour le même combattant</td></tr>
+            <tr><td class="td-center">4</td><td><strong>Décision partagée</strong></td><td>2 juges pour un, 1 juge pour l'adversaire</td></tr>
+            <tr><td class="td-center">5</td><td><strong>Décision à la majorité</strong></td><td>2 juges pour un, 1 juge en égalité</td></tr>
+            <tr><td class="td-center">6</td><td><strong>Disqualification</strong></td><td>3 avertissements ou faute grave</td></tr>
+            <tr><td class="td-center">7</td><td><strong>No Contest</strong></td><td>Circonstances extérieures / blessure non intentionnelle avant la majorité des rounds</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</Layout>
